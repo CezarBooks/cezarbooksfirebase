@@ -4,14 +4,15 @@
       "jsx": "react",
       "module": "esnext",
       "moduleResolution": "node",
-      "lib": ["dom", "esnext"],
+      "lib": [
+        "dom",
+        "esnext"
+      ],
       "strict": true,
-      "strictNullChecks": false,
       "sourceMap": true,
       "target": "esnext",
-      "outDir": "build"
     },
-    "include": ["**/*"],
-    "exclude": ["node_modules"]
+    "exclude": [
+      "node_modules"
+    ]
   }
-  

@@ -1,5 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElementt } from "react";
 
-export const App = (): ReactElement | null => {
-  return null;
+const App = (): ReaactElement | null => {
+  return <div>TEST DIV</div>;
 };
+
+export default App;

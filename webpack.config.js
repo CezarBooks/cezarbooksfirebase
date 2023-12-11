@@ -1,17 +1,14 @@
 const prod = process.env.NODE_ENV === "production";
-const Dotenv = require("dotenv-webpack");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: prod ? "production" : "development",
   entry: "./src/index.tsx",
   output: {
     path: __dirname + "/dist/",
-    publicPath: "/",
   },
-
   module: {
     rules: [
       {
@@ -19,9 +16,6 @@ module.exports = {
         exclude: /node_modules/,
         resolve: {
           extensions: [".ts", ".tsx", ".js", ".json"],
-          fallback: {
-            os: false,
-          },
         },
         use: "ts-loader",
       },
@@ -39,25 +33,10 @@ module.exports = {
     ],
   },
   devtool: prod ? undefined : "source-map",
-  devServer: {
-    historyApiFallback: true,
-    proxy: {
-      "/api": {
-        target: "http://localhost:3010",
-        secure: false,
-      },
-    },
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "./public/images", to: "images" }, //to the dist root directory
-      ],
-    }),
-    new Dotenv(),
     new MiniCssExtractPlugin(),
   ],
 };
