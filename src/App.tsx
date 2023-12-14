@@ -1,7 +1,10 @@
-import React, { ReactElementt } from "react";
+import { Grid } from "@mui/material";
+import React, { ReactElement } from "react";
 
-const App = (): ReaactElement | null => {
-  return <div>TEST DIV</div>;
+export const App = (): ReactElement | null => {
+  return (
+    <Grid>
+      <div>{"Listă cu cărțile lui Cezar"}</div>
+    </Grid>
+  );
 };
-
-export default App;
