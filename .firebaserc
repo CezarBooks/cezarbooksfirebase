@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "cezarbooks-34e63"
-  }
+  },
+  "targets": {
+    "cezarbooks-34e63": {
+      "hosting": {
+        "wordcafe": [
+          "cezarbooks-34e63"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

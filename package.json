@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --port 3000",
-    "build": "webpack", 
+    "build": "webpack",
     "deploy": "webpack && firebase deploy"
   },
   "author": "Ureche Mihai",
@@ -28,6 +28,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.8",
     "firebase": "^10.7.1",
     "react": "^18.2.0",
+    "react-router-dom": "^6.21.0",
     "styled-components": "^6.1.1"
   }
 }
