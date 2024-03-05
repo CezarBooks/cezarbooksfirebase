@@ -26,9 +26,15 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.0",
     "@mui/styled-engine-sc": "^6.0.0-alpha.8",
+    "bootstrap": "^5.3.3",
+    "css-loader": "^6.10.0",
     "firebase": "^10.7.1",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-router-dom": "^6.21.0",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^3.3.4",
     "styled-components": "^6.1.1"
   }
 }

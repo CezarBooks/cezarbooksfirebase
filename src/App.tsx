@@ -1,35 +1,49 @@
-import { Grid, ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material";
 import { roRO } from "@mui/material/locale";
 import React, { ReactElement } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import { BooksOrder } from "./Pages/Books";
+import { Login } from "./Pages/Login";
 
-const Router = createBrowserRouter([{ path: "/", element: <BooksOrder /> }]);
-
-export const App = (): ReactElement | null => {
-  const theme = createTheme(
-    {
-      palette: {
-        primary: {
-          light: "#23b6d4",
-          main: "#1fa6c1",
-          dark: "#1991a7",
-          contrastText: "#fff",
-        },
-        secondary: {
-          light: "#f9f2dc",
-          main: "#f0dea6",
-          dark: "#e5c86d",
-          contrastText: "#000",
-        },
+const Router = createBrowserRouter([
+  { path: "/order", element: <BooksOrder /> },
+  {
+    path: "*",
+    element: <Login />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
+export const theme = createTheme(
+  {
+    palette: {
+      primary: {
+        light: "#5cbd61",
+        main: "#34AD3A",
+        dark: "#247928s",
+        contrastText: "#fff",
+      },
+      secondary: {
+        light: "#4b4f4d",
+        main: "#1F2421",
+        dark: "#151917",
+        contrastText: "#fff",
       },
     },
-    roRO
-  );
+  },
+  roRO
+);
 
+export const App = (): ReactElement | null => {
   return (
     <ThemeProvider theme={theme}>
-      <RouterProvider router={Router} />
+      <RouterProvider router={Router} fallbackElement={<BooksOrder />} />
     </ThemeProvider>
   );
 };

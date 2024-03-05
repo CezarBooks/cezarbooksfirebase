@@ -8,6 +8,10 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: __dirname + "/dist/",
+    publicPath: "/",
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -23,11 +27,12 @@ module.exports = {
         test: /\.(sc|sa|c)ss/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          { loader: "style-loader" },
           // Translates CSS into CommonJS
-          "css-loader",
+          { loader: "css-loader" },
+
           // Compiles Sass to CSS
-          "sass-loader",
+          { loader: "sass-loader" },
         ],
       },
     ],

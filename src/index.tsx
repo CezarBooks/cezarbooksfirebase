@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { FirebaseApp } from "firebase/app";
 import { App } from "./App";
 import { initApp } from "./firebase/initApp";
+import "./index.scss";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
